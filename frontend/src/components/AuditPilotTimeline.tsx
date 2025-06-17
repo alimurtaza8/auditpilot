@@ -71,7 +71,7 @@ const AuditPilotTimeline = () => {
               <thead className="bg-gray-100">
                 <tr>
                   <th className="px-6 py-4 text-left font-semibold text-gray-900">Stage</th>
-                  <th className="px-6 py-4 text-left font-semibold text-gray-900">NuHarbor Timeline</th>
+                  <th className="px-6 py-4 text-left font-semibold text-gray-900">Traditional Consulting</th>
                   <th className="px-6 py-4 text-left font-semibold text-gray-900">AuditPilot Advantage</th>
                   <th className="px-6 py-4 text-left font-semibold text-gray-900">Outcome</th>
                 </tr>
@@ -79,31 +79,31 @@ const AuditPilotTimeline = () => {
               <tbody className="divide-y divide-gray-200">
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">Kickoff & Onboarding</td>
-                  <td className="px-6 py-4 text-gray-600">Week 1</td>
+                  <td className="px-6 py-4 text-gray-600">Month 1</td>
                   <td className="px-6 py-4 text-gray-900 font-semibold">Day 1 - Instant deployment</td>
                   <td className="px-6 py-4 text-gray-600">AI agent auto-ingests org data</td>
                 </tr>
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">Policy & Control Mapping</td>
-                  <td className="px-6 py-4 text-gray-600">Weeks 2–4</td>
+                  <td className="px-6 py-4 text-gray-600">Months 2–4</td>
                   <td className="px-6 py-4 text-gray-900 font-semibold">Day 2–3 - Auto-mapped via AI</td>
                   <td className="px-6 py-4 text-gray-600">Agent maps assets to ARC-AMPE & NIST 800-53</td>
                 </tr>
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">Risk Assessment</td>
-                  <td className="px-6 py-4 text-gray-600">Weeks 4–6</td>
+                  <td className="px-6 py-4 text-gray-600">Months 4–6</td>
                   <td className="px-6 py-4 text-gray-900 font-semibold">Day 4–5 - Real-time risk scoring</td>
                   <td className="px-6 py-4 text-gray-600">Continuous AI scanning flags control gaps</td>
                 </tr>
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">Remediation Strategy</td>
-                  <td className="px-6 py-4 text-gray-600">Weeks 6–8</td>
+                  <td className="px-6 py-4 text-gray-600">Months 6–8</td>
                   <td className="px-6 py-4 text-gray-900 font-semibold">Day 5–10 - Smart Playbook Generator</td>
                   <td className="px-6 py-4 text-gray-600">Tailored remediation roadmap with role-specific tasks</td>
                 </tr>
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">Ongoing Monitoring</td>
-                  <td className="px-6 py-4 text-gray-600">After Week 8</td>
+                  <td className="px-6 py-4 text-gray-600">After Months 8</td>
                   <td className="px-6 py-4 text-gray-900 font-semibold">Always-on</td>
                   <td className="px-6 py-4 text-gray-600">Daily compliance scoring, automated evidence collection</td>
                 </tr>

@@ -288,7 +288,7 @@ const Home = () => {
             >
               <div className="inline-flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full">
                 <Star className="w-4 h-4 text-yellow-500" />
-                <span className="text-sm font-medium text-gray-700">ARC-Amper Era Technology</span>
+                <span className="text-sm font-medium text-gray-700">About Us and Book a Consultation</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -310,7 +310,7 @@ const Home = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span>Start Free Trial</span>
+                  <span>Book a Consultation</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
                 <motion.button 
@@ -945,7 +945,7 @@ const Home = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Start Free Trial</span>
+                <span>Book a Consultation</span>
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               <motion.button 
