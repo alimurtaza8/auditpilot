@@ -26,6 +26,7 @@ import {
 } from 'lucide-react'
 
 import AuditEngine from '@/components/AuditEngine'
+import AuditPilotTimeline from '@/components/AuditPilotTimeline'
 
 
 const Home = () => {
@@ -909,6 +910,19 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+
+
+
+        {/* Time Line Section */}
+
+            <AuditPilotTimeline />
+
+
+
+
+
+
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
