@@ -843,44 +843,7 @@ const Home = () => {
 
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Compliance?</h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join 127 healthcare organizations already benefiting from AuditPilot. 
-              94% of users report reduced compliance-related stress.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button 
-                className="bg-white text-gray-900 font-bold py-3 px-6 md:py-4 md:px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center space-x-2"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>Book a Consultation</span>
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              <motion.button 
-                className="border-2 border-white text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Schedule Demo
-              </motion.button>
-            </div>
-            
-            <div className="mt-8 text-sm text-gray-400">
-              No credit card required • 30-day free trial • Setup in under 1 hour
-            </div>
-          </motion.div>
-        </div>
-      </section>
+    
 
       {/* Footer */}
       <footer className="bg-white py-12 md:py-16 border-t border-gray-200">
