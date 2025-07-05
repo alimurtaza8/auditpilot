@@ -6,7 +6,6 @@ import { useRef } from 'react'
 import Image from 'next/image'
 import { 
   Shield, 
-  BarChartBig,
   TrendingUp, 
   CheckCircle, 
   XCircle, 
@@ -27,10 +26,12 @@ import {
 
 import AuditEngine from '@/components/AuditEngine'
 import AuditPilotTimeline from '@/components/AuditPilotTimeline'
+import ContactModal from '@/components/ContactModal'
 
 
 const Home = () => {
-  const [, setIsScrolled] = useState(false)
+  const [,setIsScrolled] = useState(false)
+  const [isContactModalOpen, setContactModalOpen] = useState(false)
 
   const heroRef = useRef(null)
   const statsRef = useRef(null)
@@ -276,7 +277,72 @@ const Home = () => {
 
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden ">
+      {/* <motion.section 
+        ref={heroRef}
+        className="relative pt-32 pb-20 md:pt-48 md:pb-28"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke-width='2' stroke='%23f3f4f6'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+          backgroundColor: '#020617'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/90 to-slate-900"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <motion.div variants={fadeInUp}>
+            <Badge className="bg-blue-900/50 border border-blue-400 text-blue-300 py-2 px-5 rounded-full text-sm font-medium">
+              <Shield className="w-4 h-4 mr-2" />
+              Patent-Pending AI Technology
+            </Badge>
+          </motion.div>
+          
+          <motion.h1 
+            variants={fadeInUp}
+            className="text-4xl md:text-7xl font-extrabold tracking-tight text-white mt-8 leading-tight"
+          >
+            Audit-Ready in Months, <br/> Not Years.
+          </motion.h1>
+
+          <motion.p 
+            variants={fadeInUp}
+            className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-slate-300"
+          >
+            The only ARC-AMPE-native, AI agent that continuously maps 300+ controls to your environment, creating dynamic audit evidence for Medicaid, Medicare, and commercial payer organizations.
+          </motion.p>
+          
+          <motion.div 
+            variants={staggerContainer}
+            animate="animate"
+            initial="initial"
+            className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <motion.button variants={fadeInUp} className="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <Play className="w-5 h-5 mr-3" />
+              See Demo
+            </motion.button>
+            <motion.button 
+              variants={fadeInUp} 
+              onClick={() => setContactModalOpen(true)}
+              className="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-slate-600 text-base font-medium rounded-md text-slate-100 bg-slate-800/50 hover:bg-slate-700/50 md:py-4 md:text-lg md:px-10 shadow-sm transform transition-transform duration-300 hover:scale-105"
+            >
+              Book a Consultation
+            </motion.button>
+          </motion.div>
+          
+          <motion.div variants={fadeInUp} className="mt-10 flex items-center justify-center space-x-8 text-sm text-slate-400">
+            <div className="flex items-center">
+              <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+              <span>SOC 2 Compliant</span>
+            </div>
+            <div className="flex items-center">
+              <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+              <span>Enterprise Ready</span>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section> */}
+
+
+
+       <section ref={heroRef} className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden ">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
@@ -309,10 +375,24 @@ const Home = () => {
                   className="group bg-gray-900 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:bg-gray-800 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => setContactModalOpen(true)}
                 >
-                  <span>Book a Consultation</span>
+                  <span>Schedule Consultation</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
+
+                {/* <motion.button variants={fadeInUp} className="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 shadow-lg transform transition-transform duration-300 hover:scale-105">
+              <Play className="w-5 h-5 mr-3" />
+              See Demo
+            </motion.button>
+            <motion.button 
+              variants={fadeInUp} 
+              onClick={() => setContactModalOpen(true)}
+              className="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-slate-600 text-base font-medium rounded-md text-slate-100 bg-slate-800/50 hover:bg-slate-700/50 md:py-4 md:text-lg md:px-10 shadow-sm transform transition-transform duration-300 hover:scale-105"
+            >
+              Book a Consultation
+            </motion.button>     */}
+
                 <motion.button 
                   className="group border-2 border-gray-300 text-gray-700 px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:border-gray-900 hover:text-gray-900 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
@@ -441,169 +521,7 @@ const Home = () => {
 
 
       {/* Dashboard Section */}
-<section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <motion.div 
-      className="text-center mb-16"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Comprehensive Dashboard Analytics
-      </h2>
-      <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-        Get complete visibility into your healthcare compliance with our powerful, intuitive dashboard
-      </p>
-    </motion.div>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      {/* Dashboard Preview */}
-      <motion.div 
-        className="relative"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="bg-white rounded-2xl p-6 shadow-2xl border border-gray-200">
-          <div className="mb-6">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-bold text-gray-900">Compliance Overview</h3>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-sm text-gray-600">Live</span>
-              </div>
-            </div>
-            
-            {/* Mock Dashboard Elements */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-2xl font-bold text-green-700">98%</div>
-                    <div className="text-sm text-green-600">Compliance Rate</div>
-                  </div>
-                  <Shield className="w-8 h-8 text-green-600" />
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-2xl font-bold text-blue-700">247</div>
-                    <div className="text-sm text-blue-600">Active Audits</div>
-                  </div>
-                  <BarChartBig className="w-8 h-8 text-blue-600" />
-                </div>
-              </div>
-            </div>
-
-            {/* Progress Bars */}
-            <div className="space-y-4">
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-gray-700">HIPAA Compliance</span>
-                  <span className="text-sm text-gray-600">94%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div className="bg-green-500 h-2 rounded-full" style={{width: '94%'}}></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-gray-700">SOX Compliance</span>
-                  <span className="text-sm text-gray-600">87%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div className="bg-blue-500 h-2 rounded-full" style={{width: '87%'}}></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-gray-700">GDPR Compliance</span>
-                  <span className="text-sm text-gray-600">91%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div className="bg-purple-500 h-2 rounded-full" style={{width: '91%'}}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Dashboard Features */}
-      <motion.div 
-        className="space-y-8"
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div>
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-            Experience the Power of AI-Driven Insights
-          </h3>
-          
-          <div className="space-y-6">
-            <div className="flex items-start space-x-4">
-              <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <TrendingUp className="w-5 h-5 text-gray-600" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Real-time Compliance Monitoring</h4>
-                <p className="text-gray-600">Track your compliance status across all frameworks with live updates and instant alerts.</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start space-x-4">
-              <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Activity className="w-5 h-5 text-gray-600" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Interactive Analytics</h4>
-                <p className="text-gray-600">Dive deep into your data with interactive charts and customizable reporting tools.</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start space-x-4">
-              <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Eye className="w-5 h-5 text-gray-600" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Complete Audit Trail</h4>
-                <p className="text-gray-600">Maintain comprehensive documentation with automated evidence collection and storage.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 pt-6">
-          <motion.button 
-            className="group bg-gray-900 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:bg-gray-800 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => window.location.href = '/dashboard'}
-          >
-            <span>Explore Dashboard</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </motion.button>
-          
-          <motion.button 
-            className="group border-2 border-gray-300 text-gray-700 px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:border-gray-900 hover:text-gray-900 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Play className="w-5 h-5" />
-            <span>Watch Demo</span>
-          </motion.button>
-        </div>
-      </motion.div>
-    </div>
-  </div>
-</section>
 
       {/* About Section */}
       <section className="py-16 md:py-24">
@@ -1033,6 +951,8 @@ const Home = () => {
           </div>
         </div>
       </footer>
+
+      <ContactModal isOpen={isContactModalOpen} onClose={() => setContactModalOpen(false)} />
     </div>
   )
 }
